@@ -13,7 +13,7 @@ import sustainabilityImage1 from './assets/images/s_170525.png'
 import sustainabilityImage2 from './assets/images/s_240525.png'
 import sustainabilityImage3 from './assets/images/s_290525.png'
 import carbonoLogo from './assets/images/carbono_neutro_logo_f.png'
-import carbonoMarca from './assets/images/carbono_neutro_marca.png'
+import florestaSustentavel from './assets/images/floresta_sustentavel.jpg'
 import teamImage from './assets/images/team-communication.jpg'
 
 function App() {
@@ -128,7 +128,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Comunicação que <br />
-            <span className="text-gradient bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">transforma</span>
+            <span className="text-gradient bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent drop-shadow-lg">transforma</span>
           </motion.h1>     
           <motion.p
             className="text-xl md:text-2xl mb-8 opacity-90"
@@ -147,7 +147,7 @@ function App() {
           >
             <Button 
               size="lg" 
-              className="btn-premium text-white font-semibold px-8 py-3 mr-4"
+              className="btn-premium text-white font-semibold px-8 py-3"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Nossos Serviços
@@ -186,11 +186,12 @@ function App() {
           >
             <Badge className="mb-4 bg-primary/10 text-primary">Quem Somos</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Impossível de <span className="text-gradient">ignorar</span>
+              Comunicação que <span className="text-gradient">transforma</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nossa essência é criativa, provocativa, conectada com o mundo e com as relações humanas. 
-              Por isso somos capazes de levar aos clientes insights, pensamentos e ideias impossíveis de ignorar.
+              Somos uma empresa de comunicação comprometida com a sustentabilidade. 
+              Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono, 
+              plantando árvores e contribuindo para um futuro mais verde.
             </p>
           </motion.div>
 
@@ -216,19 +217,18 @@ function App() {
               className="space-y-6"
             >
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Empresas não podem mais ter campanhas que constroem marca, mas demandam anos de 
-                investimentos para se refletir em crescimento. Nem podem vender hoje e perder tudo 
-                amanhã, porque ninguém se identifica com a marca.
+                Nosso propósito é utilizar a comunicação e o marketing de forma sustentável e responsável, 
+                promovendo um mundo mais consciente e equilibrado, onde as pessoas e o planeta possam prosperar juntos.
               </motion.p>
               
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Por isso, entre vender e construir marca, escolhemos os dois. Somos uma agência 
-                full service com foco em sustentabilidade e responsabilidade social.
+                Desenvolvemos soluções de comunicação e marketing que sejam sustentáveis, criativas e inovadoras, 
+                visando o bem-estar das pessoas e do planeta. Com mais de 20 anos de experiência no mercado.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
                 <Badge variant="secondary">Comunicação Sustentável</Badge>
-                <Badge variant="secondary">Marketing Verde</Badge>
+                <Badge variant="secondary">Compensação de Carbono</Badge>
                 <Badge variant="secondary">Responsabilidade Social</Badge>
               </motion.div>
             </motion.div>
@@ -313,20 +313,15 @@ function App() {
               </motion.div>
               
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Acreditamos que a comunicação pode ser uma força transformadora para um mundo mais 
-                sustentável. Cada projeto que desenvolvemos considera o impacto ambiental e social.
+                Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono. 
+                Cada projeto gera o plantio de árvores, contribuindo para a neutralização das emissões 
+                e para um futuro mais sustentável.
               </motion.p>
               
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Nossa missão é ajudar empresas a comunicarem seus valores de forma autêntica, 
-                construindo marcas que fazem a diferença no mundo.
+                Investimos em projetos de reflorestamento, proteção de florestas existentes e apoio 
+                a iniciativas de energia limpa, alcançando assim a neutralização de carbono.
               </motion.p>
-
-              <motion.div variants={fadeInUp}>
-                <Button className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-3">
-                  Saiba Mais
-                </Button>
-              </motion.div>
             </motion.div>
 
             <motion.div
@@ -371,12 +366,12 @@ function App() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="flex justify-center"
+              className="relative"
             >
               <img
-                src={carbonoMarca}
-                alt="Carbono Neutro"
-                className="max-w-full h-auto"
+                src={florestaSustentavel}
+                alt="Floresta Sustentável"
+                className="w-full h-80 object-cover rounded-lg shadow-lg"
               />
             </motion.div>
 
