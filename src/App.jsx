@@ -13,7 +13,7 @@ import sustainabilityImage1 from './assets/images/s_170525.png'
 import sustainabilityImage2 from './assets/images/s_240525.png'
 import sustainabilityImage3 from './assets/images/s_290525.png'
 import carbonoLogo from './assets/images/carbono_neutro_logo_f.png'
-import florestaSustentavel from './assets/images/floresta_sustentavel.jpg'
+import florestaSustentavel from './assets/Ima_S6.jpg'
 import teamImage from './assets/images/team-communication.jpg'
 
 function App() {
@@ -128,7 +128,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             Comunicação que <br />
-            <span className="text-gradient bg-gradient-to-r from-cyan-400 to-cyan-600 bg-clip-text text-transparent drop-shadow-lg">transforma</span>
+            <span className="text-gradient bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent drop-shadow-lg">transforma</span>
           </motion.h1>     
           <motion.p
             className="text-xl md:text-2xl mb-8 opacity-90"
@@ -147,14 +147,14 @@ function App() {
           >
             <Button 
               size="lg" 
-              className="btn-premium text-white font-semibold px-8 py-3"
+              className="btn-premium text-white font-semibold px-8 py-3 min-w-[180px]"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Nossos Serviços
             </Button>
             <Button 
               size="lg" 
-              className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary font-semibold px-8 py-3"
+              className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary font-semibold px-8 py-3 min-w-[180px]"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Fale Conosco
@@ -497,7 +497,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-12">
+      <footer className="bg-green-600 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             variants={fadeInUp}
