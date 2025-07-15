@@ -63,13 +63,27 @@ function App() {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
-              {['Início', 'Sobre', 'Serviços', 'Sustentabilidade', 'Carbono Zero', 'Contato'].map((item) => (
+              {[
+                { name: 'Início', href: '#hero' },
+                { name: 'Sobre', href: '#sobre' },
+                { name: 'Serviços', href: '#services' },
+                { name: 'Sustentabilidade', href: '#sustentabilidade' },
+                { name: 'Carbono Zero', href: '#carbono-zero' },
+                { name: 'Contato', href: '#contact' }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.href}
                   className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </nav>
@@ -91,14 +105,28 @@ function App() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
             >
-              {['Início', 'Sobre', 'Serviços', 'Sustentabilidade', 'Carbono Zero', 'Contato'].map((item) => (
+              {[
+                { name: 'Início', href: '#hero' },
+                { name: 'Sobre', href: '#sobre' },
+                { name: 'Serviços', href: '#services' },
+                { name: 'Sustentabilidade', href: '#sustentabilidade' },
+                { name: 'Carbono Zero', href: '#carbono-zero' },
+                { name: 'Contato', href: '#contact' }
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.name}
+                  href={item.href}
                   className="block py-2 text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
-                  {item}
+                  {item.name}
                 </a>
               ))}
             </motion.nav>
@@ -107,7 +135,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="hero" className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -186,7 +214,7 @@ function App() {
           >
             <Badge className="mb-4 bg-primary/10 text-primary">Quem Somos</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Comunicação que <span className="text-gradient">transforma</span>
+              Onde <span className="text-gradient">propósito</span> encontra ação
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Somos uma empresa de comunicação comprometida com a sustentabilidade. 
