@@ -418,7 +418,7 @@ function App() {
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.5 }}
                 >
-                  +400
+                  + de 400
                 </motion.div>
                 <motion.p
                   variants={fadeInUp}
@@ -447,12 +447,6 @@ function App() {
                   Nossos projetos de comunicação são desenvolvidos com práticas sustentáveis, 
                   contribuindo para a neutralização de carbono e o plantio de árvores nativas.
                 </p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp}>
-                <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 w-full">
-                  Saiba mais sobre nosso impacto
-                </Button>
               </motion.div>
             </motion.div>
           </div>
