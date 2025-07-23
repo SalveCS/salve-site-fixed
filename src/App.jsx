@@ -64,22 +64,22 @@ function App() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
               {[
-                { name: 'Início', href: '#hero' },
-                { name: 'Sobre', href: '#sobre' },
-                { name: 'Serviços', href: '#services' },
-                { name: 'Sustentabilidade', href: '#sustentabilidade' },
-                { name: 'Carbono Zero', href: '#carbono-zero' },
-                { name: 'Contato', href: '#contact' }
+                { name: 'Início', id: 'inicio' },
+                { name: 'Sobre', id: 'sobre' },
+                { name: 'Serviços', id: 'services' },
+                { name: 'Sustentabilidade', id: 'sustentabilidade' },
+                { name: 'Carbono Zero', id: 'carbono-zero' },
+                { name: 'Contato', id: 'contact' }
               ].map((item) => (
                 <a
                   key={item.name}
-                  href={item.href}
+                  href={`#${item.id}`}
                   className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
                   onClick={(e) => {
                     e.preventDefault();
-                    const element = document.querySelector(item.href);
+                    const element = document.getElementById(item.id);
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                   }}
                 >
@@ -106,23 +106,23 @@ function App() {
               exit={{ opacity: 0, height: 0 }}
             >
               {[
-                { name: 'Início', href: '#hero' },
-                { name: 'Sobre', href: '#sobre' },
-                { name: 'Serviços', href: '#services' },
-                { name: 'Sustentabilidade', href: '#sustentabilidade' },
-                { name: 'Carbono Zero', href: '#carbono-zero' },
-                { name: 'Contato', href: '#contact' }
+                { name: 'Início', id: 'inicio' },
+                { name: 'Sobre', id: 'sobre' },
+                { name: 'Serviços', id: 'services' },
+                { name: 'Sustentabilidade', id: 'sustentabilidade' },
+                { name: 'Carbono Zero', id: 'carbono-zero' },
+                { name: 'Contato', id: 'contact' }
               ].map((item) => (
                 <a
                   key={item.name}
-                  href={item.href}
+                  href={`#${item.id}`}
                   className="block py-2 text-foreground hover:text-primary transition-colors duration-300"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsMenuOpen(false);
-                    const element = document.querySelector(item.href);
+                    const element = document.getElementById(item.id);
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                   }}
                 >
@@ -135,7 +135,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="inicio" className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Background Image with Dark Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -164,7 +164,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            A união entre qualidade e sustentabilidade
+            A união entre qualidade e inovação
           </motion.p>
           
           <motion.div
@@ -176,14 +176,24 @@ function App() {
             <Button 
               size="lg" 
               className="btn-premium text-white font-semibold px-8 py-3 min-w-[180px]"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                const element = document.getElementById('services');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
               Nossos Serviços
             </Button>
             <Button 
               size="lg" 
               className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary font-semibold px-8 py-3 min-w-[180px]"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
             >
               Fale Conosco
             </Button>
@@ -214,10 +224,10 @@ function App() {
           >
             <Badge className="mb-4 bg-primary/10 text-primary">Quem Somos</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Onde <span className="text-gradient">propósito</span> encontra ação
+              Onde propósito <span className="text-gradient">encontra ação</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Somos uma empresa de comunicação comprometida com a sustentabilidade. 
+              Somos uma empresa de comunicação comprometida com o futuro. 
               Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono, 
               plantando árvores e contribuindo para um futuro mais verde.
             </p>
@@ -245,12 +255,12 @@ function App() {
               className="space-y-6"
             >
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Nosso propósito é utilizar a comunicação e o marketing de forma sustentável e responsável, 
-                promovendo um mundo mais consciente e equilibrado, onde as pessoas e o planeta possam prosperar juntos.
+                Nosso propósito é utilizar a comunicação e o marketing de forma consciente e responsável, 
+                promovendo um mundo mais equilibrado, onde as pessoas e o planeta possam prosperar juntos.
               </motion.p>
               
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Desenvolvemos soluções de comunicação e marketing que sejam sustentáveis, criativas e inovadoras, 
+                Desenvolvemos soluções de comunicação e marketing que sejam conscientes, criativas e inovadoras, 
                 visando o bem-estar das pessoas e do planeta. Com mais de 20 anos de experiência no mercado.
               </motion.p>
 
@@ -290,13 +300,13 @@ function App() {
                 {[
               {
                 icon: <Leaf className="w-12 h-12 text-primary" />,
-                title: "Marketing Sustentável",
-                description: "Estratégias de marketing que respeitam o meio ambiente e promovem práticas sustentáveis."
+                title: "Marketing Consciente",
+                description: "Estratégias de marketing que respeitam o meio ambiente e promovem práticas responsáveis."
               },
               {
                 icon: <Users className="w-12 h-12 text-primary" />,
                 title: "Comunicação Corporativa",
-                description: "Desenvolvemos a comunicação interna e externa da sua empresa com foco em sustentabilidade."
+                description: "Desenvolvemos a comunicação interna e externa da sua empresa com foco em responsabilidade social."
               },
               {
                 icon: <Target className="w-12 h-12 text-primary" />,
@@ -343,7 +353,7 @@ function App() {
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
                 Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono. 
                 Cada projeto gera o plantio de árvores, contribuindo para a neutralização das emissões 
-                e para um futuro mais sustentável.
+                e para um futuro mais verde.
               </motion.p>
               
               <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
@@ -383,7 +393,7 @@ function App() {
               Nosso compromisso com o <span className="text-gradient">planeta</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Cada projeto que desenvolvemos contribui para um futuro mais sustentável. 
+              Cada projeto que desenvolvemos contribui para um futuro mais consciente. 
               Nosso trabalho gera impacto positivo real no meio ambiente.
             </p>
           </motion.div>
@@ -444,9 +454,15 @@ function App() {
                   <h3 className="text-xl font-bold text-gray-800">Certificação Carbono Zero</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Nossos projetos de comunicação são desenvolvidos com práticas sustentáveis, 
+                  Nossos projetos de comunicação são desenvolvidos com práticas conscientes, 
                   contribuindo para a neutralização de carbono e o plantio de árvores nativas.
                 </p>
+              </motion.div>
+
+              <motion.div variants={fadeInUp}>
+                <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 w-full">
+                  Saiba mais sobre nosso impacto
+                </Button>
               </motion.div>
             </motion.div>
           </div>
@@ -490,7 +506,7 @@ function App() {
                 icon: <Phone className="w-8 h-8 text-primary" />,
                 title: "WhatsApp",
                 content: "",
-                link: "https://wa.me/5511979757763"
+                link: "https://api.whatsapp.com/send/?phone=5511979757763&text=Olá! Gostaria de mais informações sobre os serviços da SALVE.&type=phone_number&app_absent=0"
               },
               {
                 icon: <Instagram className="w-8 h-8 text-primary" />,
@@ -537,6 +553,9 @@ function App() {
             <p className="opacity-75">
               © 2025 SALVE. Todos os direitos reservados.
             </p>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 mt-4">
+              <a href="/termos-de-uso.html" target="_blank" rel="noopener noreferrer" className="text-white opacity-75 hover:opacity-100 transition-opacity duration-300">Termos de Uso</a>
+            </div>
           </motion.div>
         </div>
       </footer>
