@@ -459,11 +459,7 @@ function App() {
                 </p>
               </motion.div>
 
-              <motion.div variants={fadeInUp}>
-                <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 w-full">
-                  Saiba mais sobre nosso impacto
-                </Button>
-              </motion.div>
+
             </motion.div>
           </div>
         </div>
