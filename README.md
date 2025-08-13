@@ -1,108 +1,151 @@
-# Onda Mar e Mato - Website
+# 🌱 SALVE - Comunicação Sustentável
 
-Site oficial da marca Onda Mar e Mato, focado na sustentabilidade marinha e no produto inovador Cascudo.
+> Site de última geração para a SALVE, empresa de comunicação comprometida com o futuro sustentável.
 
-## 🌊 Sobre o Projeto
+## 🚀 Tecnologias Utilizadas
 
-Este site foi desenvolvido com React e Tailwind CSS, apresentando:
+- **React 19** - Framework principal
+- **Vite** - Build tool otimizado
+- **Framer Motion** - Animações avançadas
+- **Tailwind CSS** - Styling utilitário
+- **Shadcn/UI** - Componentes base
+- **PWA** - Progressive Web App
 
-- **Design Sofisticado**: Inspirado em agências modernas, adaptado para o universo do surf
-- **Foco no Cascudo**: Produto patenteado para limpeza dos oceanos durante o surf
-- **Energia Salgada**: Conceito filosófico da marca
-- **Responsivo**: Otimizado para desktop e mobile
-- **Animações**: Efeitos visuais que enriquecem a experiência
+## ✨ Funcionalidades Modernas
 
-## 🚀 Deploy no Vercel
+### 🎨 **UX/UI Avançado**
+- Micro-interações elaboradas
+- Animações de scroll e parallax
+- Lazy loading inteligente
+- Loading states modernos
+- Design responsivo mobile-first
 
-### Opção 1: Deploy Direto
-1. Acesse [vercel.com](https://vercel.com)
-2. Faça login com sua conta GitHub
-3. Clique em "New Project"
-4. Importe este repositório
-5. Configure as seguintes opções:
-   - **Framework Preset**: Vite
-   - **Build Command**: `pnpm run build`
-   - **Output Directory**: `dist`
-6. Clique em "Deploy"
+### 📱 **PWA (Progressive Web App)**
+- Instalação nativa
+- Funcionalidades offline
+- Service worker otimizado
+- Cache strategies avançadas
 
-### Opção 2: Via GitHub
-1. Faça upload deste projeto para um repositório GitHub
-2. Conecte o Vercel ao seu repositório
-3. O deploy será automático a cada push
+### 🔍 **SEO Otimizado**
+- Meta tags completas
+- Structured data (JSON-LD)
+- Open Graph e Twitter Cards
+- Performance otimizada
 
-## 🛠️ Desenvolvimento Local
+### 📊 **Analytics Integrado**
+- Google Analytics 4
+- Event tracking personalizado
+- Performance monitoring
+- Error tracking automático
+
+## 🛠️ Instalação e Desenvolvimento
 
 ```bash
 # Instalar dependências
-pnpm install
+npm install
 
-# Executar em modo desenvolvimento
-pnpm run dev
+# Executar em desenvolvimento
+npm run dev
 
 # Build para produção
-pnpm run build
+npm run build
 
 # Preview do build
-pnpm run preview
+npm run preview
 ```
 
-## 📁 Estrutura do Projeto
+## 🌐 Deploy
+
+### Vercel (Recomendado)
+1. Conecte seu repositório GitHub ao Vercel
+2. Configure as variáveis de ambiente se necessário
+3. Deploy automático a cada push
+
+### Outras Plataformas
+O projeto é compatível com qualquer plataforma que suporte sites estáticos:
+- Netlify
+- GitHub Pages
+- Firebase Hosting
+- AWS S3 + CloudFront
+
+## 📝 Configurações Importantes
+
+### Google Analytics
+Para ativar o Google Analytics, descomente e configure o measurement ID em `src/App.jsx`:
+
+```javascript
+// Linha 42 em App.jsx
+initAllTracking('G-SEU-MEASUREMENT-ID')
+```
+
+### PWA
+O manifest e service worker estão configurados. Para personalizar:
+- `public/manifest.json` - Configurações do PWA
+- `public/sw.js` - Service worker
+
+## 🎯 Estrutura do Projeto
 
 ```
 src/
-├── assets/          # Imagens e logos
-├── components/      # Componentes React
-│   ├── ui/         # Componentes de UI (shadcn/ui)
-│   ├── Header.jsx
-│   ├── HeroSection.jsx
-│   ├── CascudoSection.jsx
-│   ├── EnergiaSalgadaSection.jsx
-│   ├── AboutSection.jsx
-│   └── Footer.jsx
-├── hooks/          # Custom hooks
-├── lib/            # Utilitários
-├── App.jsx         # Componente principal
-├── App.css         # Estilos customizados
-└── main.jsx        # Entry point
+├── components/          # Componentes React
+│   ├── ui/             # Componentes base (Shadcn/UI)
+│   ├── LazyImage.jsx   # Componente de lazy loading
+│   ├── ScrollReveal.jsx # Animações de scroll
+│   └── ...
+├── hooks/              # Hooks personalizados
+├── utils/              # Utilitários
+├── assets/             # Imagens e recursos
+└── App.jsx            # Componente principal
 ```
 
-## 🎨 Tecnologias Utilizadas
+## 🔧 Personalização
 
-- **React 18**: Framework principal
-- **Vite**: Build tool
-- **Tailwind CSS**: Framework CSS
-- **shadcn/ui**: Componentes de UI
-- **Lucide React**: Ícones
-- **Framer Motion**: Animações (disponível)
+### Cores e Tema
+As cores estão definidas em `src/App.css` usando CSS custom properties:
 
-## 🌊 Funcionalidades
+```css
+:root {
+  --primary: 34 197 94; /* green-500 */
+  --secondary: 241 245 249; /* slate-100 */
+  /* ... */
+}
+```
 
-- ✅ Navegação suave entre seções
-- ✅ Header fixo com efeito glass
-- ✅ Animações de scroll
-- ✅ Seção Cascudo com destaque
-- ✅ Seção Energia Salgada interativa
-- ✅ Footer completo com links
-- ✅ Link para Instagram oficial
-- ✅ Design responsivo
+### Animações
+Personalize as animações em:
+- `src/components/ScrollReveal.jsx`
+- `src/components/ParallaxSection.jsx`
+- `src/App.css` (keyframes)
 
-## 📱 Responsividade
+## 📊 Performance
 
-O site é totalmente responsivo e otimizado para:
-- Desktop (1920px+)
-- Tablet (768px - 1024px)
-- Mobile (320px - 767px)
+O site foi otimizado para máxima performance:
+- ✅ Lazy loading de imagens
+- ✅ Code splitting automático
+- ✅ Preload de recursos críticos
+- ✅ Compressão de assets
+- ✅ Cache strategies otimizadas
 
-## 🔗 Links Importantes
+## 🤝 Contribuição
 
-- **Instagram**: [@ondamaremato](https://www.instagram.com/ondamaremato/)
-- **Email**: contato@ondamaremato.com
+1. Fork o projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
 
 ## 📄 Licença
 
-© 2025 Onda Mar e Mato. Todos os direitos reservados.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Contato
+
+**SALVE Comunicação Sustentável**
+- 📧 Email: salvempresa@gmail.com
+- 📱 WhatsApp: +55 11 97975-7763
+- 📸 Instagram: [@salve_cs](https://www.instagram.com/salve_cs/)
 
 ---
 
-**#EnergiaSalgada** 🌊⚡🏄‍♂️
+Desenvolvido com 💚 para um futuro mais sustentável.
 
