@@ -42,7 +42,7 @@ function App() {
     addResourceHints()
     
     // Initialize analytics (replace with actual GA measurement ID)
-    // initAllTracking('G-XXXXXXXXXX')
+    initAllTracking('G-BJ72P2VW3S')
     
     // Preload critical images
     const criticalImages = [
