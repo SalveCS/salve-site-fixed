@@ -8,7 +8,7 @@ import { Leaf, Users, Target, Mail, Phone, Instagram, ChevronDown, Menu, X } fro
 import LazyImage from './components/LazyImage'
 import ScrollReveal from './components/ScrollReveal'
 import ParallaxSection from './components/ParallaxSection'
-import PWAInstallPrompt from './components/PWAInstallPrompt'
+
 import { useScrollProgress, useParallax } from './hooks/useIntersectionObserver'
 import { useServiceWorker } from './hooks/usePWA'
 import { preloadImages, addResourceHints } from './utils/performance'
@@ -548,7 +548,7 @@ function App() {
       </footer>
 
       {/* PWA Install Prompt */}
-      {isRegistered && <PWAInstallPrompt />}
+      
     </div>
   )
 }
