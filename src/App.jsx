@@ -16,7 +16,7 @@ import { initAllTracking, trackButtonClick, trackContactClick, trackSectionView 
 
 // Import images
 import logoSalveBranco from './assets/images/logo_salve_branco.png'
-import heroImage from './assets/images/hero_dark_leaves.jpg'
+import heroImage from './assets/images/Fundo8.jpg'
 import sustainabilityImage1 from './assets/images/s_170525.png'
 import sustainabilityImage2 from './assets/images/s_240525.png'
 import sustainabilityImage3 from './assets/images/s_290525.png'
@@ -225,7 +225,7 @@ function App() {
             >
               <Button 
                 size="lg" 
-                className="btn-premium magnetic text-white font-semibold px-8 py-3 min-w-[180px] relative overflow-hidden"
+                className="btn-premium magnetic text-white font-semibold px-8 py-3 min-w-[180px] relative overflow-hidden cursor-pointer"
                 onClick={() => {
                   trackButtonClick('nossos_servicos', 'hero')
                   const element = document.getElementById('services');
@@ -243,7 +243,7 @@ function App() {
             >
               <Button 
                 size="lg" 
-                className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white hover:text-primary font-semibold px-8 py-3 min-w-[180px] transition-all duration-300"
+                className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30 hover:border-white/50 font-semibold px-8 py-3 min-w-[180px] transition-all duration-300 cursor-pointer"
                 onClick={() => {
                   trackButtonClick('fale_conosco', 'hero')
                   const element = document.getElementById('contact');
