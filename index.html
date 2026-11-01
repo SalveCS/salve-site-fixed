@@ -47,7 +47,7 @@
   "url": "https://salv3.vercel.app/",
   "logo": "https://salv3.vercel.app/favicon-512.png",
   "description": "Agência de marketing, publicidade e comunicação. Todo o carbono gerado nos projetos vira muda nativa da Mata Atlântica, com certificado.",
-  "foundingDate": "2004",
+  "founder": { "@type": "Person", "name": "Renê", "jobTitle": "Fundador e diretor de comunicação" },
   "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
   "email": "salvempresa@gmail.com",
   "telephone": "+55-11-97975-7763",
@@ -171,6 +171,13 @@ p{margin:0}
 .manifesto .colunas{grid-column:4 / span 9;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;margin-top:clamp(40px,5vw,64px)}
 .manifesto .colunas p{max-width:30em}
 
+/* História */
+.texto-historia{display:grid;gap:20px}
+.texto-historia p{max-width:34em}
+.texto-historia p:not(.lead){color:var(--tinta-2)}
+.assinatura{display:flex;align-items:center;gap:14px;margin-top:8px;font-family:var(--display);font-size:26px;color:var(--tinta)!important}
+.assinatura span{display:inline-block;width:40px;border-top:1px solid var(--tinta)}
+
 /* Serviços */
 .servicos-lista{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;margin-top:clamp(40px,5vw,64px);padding:0;list-style:none;border-top:1px solid var(--tinta)}
 .servicos-lista li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 20px;padding:28px 0 30px;border-bottom:1px solid var(--fio)}
@@ -283,6 +290,7 @@ p{margin:0}
   <div class="wrap">
     <a href="#inicio" class="logo" aria-label="Salve, voltar ao início"></a>
     <nav class="menu" aria-label="Principal">
+      <a class="lnk" href="#historia">Quem somos</a>
       <a class="lnk" href="#servicos">Serviços</a>
       <a class="lnk" href="#como-funciona">Como funciona</a>
       <a class="lnk" href="#mata-atlantica">Mata Atlântica</a>
@@ -294,6 +302,7 @@ p{margin:0}
   <nav class="menu-movel" id="menu-movel" aria-label="Menu" hidden>
     <div class="wrap">
       <ul>
+        <li><a href="#historia">Quem somos</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#como-funciona">Como funciona</a></li>
         <li><a href="#mata-atlantica">Mata Atlântica</a></li>
@@ -323,7 +332,7 @@ p{margin:0}
       </figure>
 
       <ul class="fatos" style="grid-column:1 / -1;margin:0;padding:0">
-        <li><strong>Mais de 20</strong>anos de mercado, criando para marcas de vários setores.</li>
+        <li><strong>Mais de 20</strong>anos de comunicação na bagagem do fundador, de multinacionais a marcas em crescimento.</li>
         <li><strong>Mais de 400</strong>mudas nativas plantadas a partir dos nossos projetos.</li>
         <li><strong>Um certificado</strong>de plantio para cada projeto entregue.</li>
       </ul>
@@ -336,6 +345,20 @@ p{margin:0}
       <div class="colunas">
         <p>Criamos estratégia, marca, campanha e conteúdo para empresas de vários tamanhos e setores. Nosso trabalho é fazer sua marca ser lembrada e escolhida.</p>
         <p>A diferença está no que acontece depois da entrega. Calculamos o carbono gerado em cada projeto e devolvemos esse número à terra, em mudas nativas. Você recebe o trabalho pronto e a prova do que foi plantado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao historia" id="historia" aria-labelledby="t-historia">
+    <div class="wrap">
+      <div class="cabeca">
+        <h2 id="t-historia">Padrão de grande agência. Com o dono no projeto.</h2>
+      </div>
+      <div class="corpo texto-historia">
+        <p class="lead">A Salve nasceu da trajetória de Renê, publicitário com mais de 20 anos de comunicação. Antes de fundar a agência, ele construiu carreira em indústrias de grande porte e em multinacional, onde viu de perto como as grandes marcas planejam, criam e medem resultado.</p>
+        <p>A ideia começou a ganhar forma há mais de dez anos, a partir de uma inquietação simples. Toda comunicação gera impacto, então esse impacto também podia voltar para a terra. Dali saiu o modelo que guia a Salve até hoje, comunicação com o rigor das gigantes e o carbono de cada projeto devolvido à Mata Atlântica.</p>
+        <p>Hoje sua marca recebe estratégia, criação e mídia nesse nível, com uma diferença que as grandes raramente oferecem. Quem fundou a Salve acompanha cada projeto de perto.</p>
+        <p class="assinatura"><span></span>Renê, fundador da Salve</p>
       </div>
     </div>
   </section>
