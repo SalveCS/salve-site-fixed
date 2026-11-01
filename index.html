@@ -335,7 +335,7 @@ p{margin:0}
       <h2 id="t-sobre">Fazemos o que uma boa agência faz. E devolvemos à mata o que cada projeto consome.</h2>
       <div class="colunas">
         <p>Criamos estratégia, marca, campanha e conteúdo para empresas de vários tamanhos e setores. Nosso trabalho é fazer sua marca ser lembrada e escolhida.</p>
-        <p>A diferença está no que acontece depois da entrega. Calculamos o carbono gerado em cada projeto e transformamos esse número em mudas nativas da Mata Atlântica. Você recebe o trabalho e o certificado de plantio.</p>
+        <p>A diferença está no que acontece depois da entrega. Calculamos o carbono gerado em cada projeto e devolvemos esse número à terra, em mudas nativas. Você recebe o trabalho pronto e a prova do que foi plantado.</p>
       </div>
     </div>
   </section>
@@ -410,7 +410,7 @@ p{margin:0}
         <li>
           <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="5" y="6" width="34" height="26" rx="2"/><path d="M11 13h14M11 18h10"/><circle cx="31" cy="25" r="5" class="mata"/><path d="M28 29l-2 9 5-3 5 3-2-9" class="mata"/></svg>
           <h3>Uma causa que se comprova</h3>
-          <p>Cada projeto deixa um registro concreto de impacto, com certificado de plantio para mostrar a clientes, equipe e parceiros.</p>
+          <p>Cada projeto deixa um registro concreto de impacto, para mostrar a clientes, equipe e parceiros.</p>
         </li>
         <li>
           <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M6 8h32v22H20l-8 7v-7H6z"/><path class="mata" d="M22 26V16"/><path class="mata" d="M22 19c-4 0-7-3-7-7 4 0 7 3 7 7zM22 17c0-4 3-7 7-7 0 4-3 7-7 7z"/></svg>
@@ -466,7 +466,7 @@ p{margin:0}
           <path d="M340 238h24"/>
         </svg>
         <h3>Um certificado por projeto.</h3>
-        <p class="apoio">Ao fim de cada trabalho, sua empresa recebe o certificado de plantio. Um documento para guardar, apresentar e se orgulhar.</p>
+        <p class="apoio">É a prova de que a comunicação da sua empresa também plantou floresta. Um documento para guardar, apresentar e se orgulhar.</p>
         <a class="botao" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20que%20o%20pr%C3%B3ximo%20projeto%20da%20minha%20empresa%20vire%20floresta%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" style="justify-self:start">Quero plantar com a Salve</a>
       </div>
     </div>
@@ -650,6 +650,12 @@ p{margin:0}
     var acoes = document.querySelector('.abertura .acoes'), contato = document.getElementById('contato');
     acoes.dataset.alvo = 'acoes'; contato.dataset.alvo = 'contato';
     obs.observe(acoes); obs.observe(contato);
+  }
+
+  /* Remove o service worker do site antigo, que guardava a versão velha */
+  if ('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(function(rs){ rs.forEach(function(r){ r.unregister(); }); }).catch(function(){});
+    if (window.caches) caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }).catch(function(){});
   }
 
   /* Medição de contato no Google Analytics */

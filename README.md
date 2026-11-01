@@ -15,7 +15,18 @@ robots.txt, sitemap.xml
 vercel.json                    cabeçalhos de segurança e cache
 ```
 
-## Publicar
+## Publicar no repositório atual, projeto Vite
+
+O projeto que já está na Vercel usa Vite. Nele, os arquivos estáticos precisam ficar na pasta `public`, senão não vão para o ar.
+
+1. Na raiz do repositório, substitua `index.html` e `vercel.json` por estes.
+2. Copie o conteúdo da pasta `public` deste pacote para a pasta `public` do repositório, substituindo os arquivos antigos.
+3. Apague `public/manifest.json` e `public/favicon.png`, que são do site antigo.
+4. Faça o commit. A Vercel publica sozinha.
+
+O arquivo `public/sw.js` desativa o service worker do site antigo, que guardava a versão velha no navegador de quem já tinha visitado o site. Ele precisa ficar no ar por alguns meses.
+
+## Publicar como site estático, sem Vite
 
 1. No GitHub, crie um repositório, por exemplo `salve-site`.
 2. Envie o conteúdo desta pasta para a raiz do repositório. Pelo site do GitHub, use Add file, Upload files e arraste todos os arquivos e a pasta assets.
