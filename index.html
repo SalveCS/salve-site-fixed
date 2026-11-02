@@ -30,13 +30,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <!--GA-->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ72P2VW3S"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+  try { if (localStorage.getItem('salve-cookies') === 'granted') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-BJ72P2VW3S');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ72P2VW3S"></script>
 <!--/GA-->
 <script type="application/ld+json">
 {
@@ -50,7 +52,7 @@
   "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
   "email": "salvempresa@gmail.com",
   "telephone": "+55-11-97975-7763",
-  "sameAs": ["https://www.instagram.com/salve_cs/"],
+  "sameAs": ["https://www.instagram.com/salve_cs/", "https://www.linkedin.com/company/93306762"],
   "areaServed": "BR",
   "knowsAbout": ["Marketing", "Publicidade", "Comunicação corporativa", "Branding", "Marketing digital", "Compensação de carbono", "Mata Atlântica"]
 }
@@ -146,7 +148,7 @@ p{margin:0}
 .fatos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--tinta)}
 .fatos li{list-style:none;padding:18px 20px 22px 0;font-size:15px;line-height:1.4;color:var(--tinta-2)}
 .fatos li + li{padding-left:20px;border-left:1px solid var(--fio)}
-.fatos strong{display:block;font-family:var(--display);font-weight:400;font-size:34px;line-height:1.1;color:var(--tinta);margin-bottom:4px}
+.fatos strong{display:block;font-family:var(--texto);font-weight:500;font-size:30px;letter-spacing:-.025em;line-height:1.15;color:var(--tinta);margin-bottom:6px;font-variant-numeric:lining-nums tabular-nums}
 .fatos ul{margin:0;padding:0;display:contents}
 
 /* traço das ilustrações */
@@ -196,6 +198,8 @@ p{margin:0}
 .servicos-lista li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 20px;padding:28px 0 30px;border-bottom:1px solid var(--fio)}
 .servicos-lista > li > svg{grid-row:span 3;width:40px;height:40px;margin-top:-2px}
 .servicos-lista p{color:var(--tinta-2);max-width:32em}
+.servicos-lista h3 a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .3s}
+.servicos-lista h3 a:hover{background-size:100% 1px}
 .servicos-lista .falar{grid-column:2;justify-self:start;display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:15px;font-weight:500;text-decoration:none;color:var(--tinta);border-bottom:1px solid var(--fio)}
 .servicos-lista .falar:hover{border-bottom-color:var(--tinta)}
 .servicos-lista .falar svg{width:14px;height:14px;grid-row:auto;margin:0}
@@ -250,6 +254,34 @@ p{margin:0}
 .canais .valor{font-family:var(--texto);font-weight:400;letter-spacing:-.02em;font-size:clamp(22px,2.8vw,36px);line-height:1.2;overflow-wrap:anywhere;user-select:text}
 .canais svg{width:22px;height:22px}
 
+
+/* Formulário */
+.form{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;margin-top:clamp(40px,5vw,64px)}
+.campo{display:grid;gap:8px;min-width:0}
+.campo.largo{grid-column:1 / -1}
+.campo label{font-size:14px;color:var(--tinta-2)}
+.campo input,.campo select,.campo textarea{font:400 18px/1.4 var(--texto);color:var(--tinta);background:transparent;border:0;border-bottom:1px solid var(--tinta);border-radius:0;padding:10px 0;width:100%;-webkit-appearance:none;appearance:none}
+.campo select{background-image:linear-gradient(45deg,transparent 50%,var(--tinta) 50%),linear-gradient(135deg,var(--tinta) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:28px}
+.campo select option{color:#1d3527;background:#fff}
+.campo textarea{resize:vertical;min-height:96px}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-bottom-color:var(--ar);box-shadow:0 1px 0 var(--ar)}
+.campo .erro{font-size:13px;color:#b5452f;min-height:0}
+.form .envio{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.form .envio p{font-size:14px;color:var(--tinta-2);max-width:30em}
+.form button.botao{cursor:pointer;font-family:var(--texto)}
+.ou{grid-column:1 / -1;margin-top:clamp(48px,6vw,72px);font-size:15px;color:var(--tinta-2)}
+.ou + .canais{margin-top:16px}
+
+/* Aviso de cookies */
+.cookies{position:fixed;z-index:70;left:max(16px, env(safe-area-inset-left, 0px));bottom:calc(16px + env(safe-area-inset-bottom, 0px));width:min(440px, calc(100% - 32px));padding:22px 22px 20px;background:var(--papel);color:var(--tinta);border:1px solid var(--fio);border-radius:4px;box-shadow:0 12px 40px rgba(16,28,21,.18);display:grid;gap:16px;font-size:15px;line-height:1.5}
+.cookies p{margin:0;color:var(--tinta-2)}
+.cookies a{color:var(--tinta)}
+.cookies .acoes-c{display:flex;gap:10px;flex-wrap:wrap}
+.cookies button{font:500 14px/1 var(--texto);padding:13px 20px;min-height:44px;border-radius:999px;border:1px solid var(--tinta);background:transparent;color:var(--tinta);cursor:pointer}
+.cookies button.cheio{background:var(--tinta);color:var(--papel)}
+.cookies button:focus-visible{outline:1.5px solid var(--ar);outline-offset:3px}
+body.com-cookies .barra-cta{display:none!important}
+
 /* Rodapé */
 .rodape{border-top:1px solid var(--fio);padding-block:40px 48px;font-size:14px;color:var(--tinta-2)}
 .rodape .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
@@ -290,6 +322,7 @@ p{margin:0}
   .fatos li{padding:16px 0}
   .fatos li + li{padding-left:0;border-left:0;border-top:1px solid var(--fio)}
   .manifesto .colunas,.servicos-lista{grid-template-columns:minmax(0,1fr)}
+  .form{grid-template-columns:minmax(0,1fr)}
   .canais a{grid-template-columns:minmax(0,1fr) 22px;gap:4px 12px}
   .canais .rotulo{grid-column:1}
   .canais .valor{grid-column:1}
@@ -336,7 +369,7 @@ p{margin:0}
     <div class="wrap">
       <div class="texto">
         <h1>Comunicação que vira floresta.</h1>
-        <p class="lead">A Salve é uma agência de marketing, publicidade e comunicação. Criamos marcas e campanhas que fazem sua empresa crescer. E todo o carbono gerado nos nossos projetos vira muda nativa da Mata Atlântica, com certificado.</p>
+        <p class="lead">Marketing, publicidade e comunicação para fazer sua marca crescer. E todo o carbono dos nossos projetos vira muda nativa da Mata Atlântica, com certificado.</p>
         <div class="acoes">
           <a class="botao cheio" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8c-1-.4-1.9-1.3-2.3-2.3l.8-1-1-2-1.5 1z"/></svg>
@@ -398,37 +431,37 @@ p{margin:0}
       <ul class="servicos-lista traco">
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16"/><circle cx="20" cy="20" r="9"/><circle cx="20" cy="20" r="2"/><path d="M20 2v6M20 32v6M2 20h6M32 20h6"/></svg>
-          <h3>Estratégia e posicionamento</h3>
+          <h3><a href="/servicos/estrategia-e-posicionamento.html">Estratégia e posicionamento</a></h3>
           <p>Diagnóstico, posicionamento e plano de comunicação para sua marca saber aonde quer chegar e como.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20estrat%C3%A9gia%20e%20posicionamento%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4l9 14-9 18-9-18z"/><path d="M20 4v20"/><circle cx="20" cy="25" r="2.5"/><path d="M11 18h18"/></svg>
-          <h3>Branding e identidade visual</h3>
+          <h3><a href="/servicos/branding-e-identidade-visual.html">Branding e identidade visual</a></h3>
           <p>Nome, logo, sistema visual e aplicações, do digital ao impresso.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20branding%20e%20identidade%20visual%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 16v8h6l14 8V8L12 16z"/><path d="M12 24l3 9h4l-2-8"/><path d="M31 14c2 1.5 3 3.5 3 6s-1 4.5-3 6"/></svg>
-          <h3>Publicidade e campanhas</h3>
+          <h3><a href="/servicos/publicidade-e-campanhas.html">Publicidade e campanhas</a></h3>
           <p>Ideia, roteiro e produção de campanhas para digital, TV, rádio e mídia exterior.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20publicidade%20e%20campanhas%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 8h28v18H18l-7 6v-6H6z"/><path d="M12 15h16M12 20h10"/></svg>
-          <h3>Redes sociais e conteúdo</h3>
+          <h3><a href="/servicos/redes-sociais-e-conteudo.html">Redes sociais e conteúdo</a></h3>
           <p>Planejamento, criação e gestão de conteúdo, com constância e voz própria.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20redes%20sociais%20e%20conte%C3%BAdo%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="7" width="32" height="22" rx="2"/><path d="M14 35h12M20 29v6"/><path d="M10 23l6-6 4 4 8-8"/><path d="M24 13h4v4"/></svg>
-          <h3>Marketing digital</h3>
+          <h3><a href="/servicos/marketing-digital.html">Marketing digital</a></h3>
           <p>Mídia paga, sites e páginas de conversão, pensados para gerar resultados que você pode medir.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20marketing%20digital%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
         <li>
           <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 35V12l10-6v29M16 35V14h18v21M3 35h34"/><path d="M21 19h2M27 19h2M21 24h2M27 24h2M21 29h2M27 29h2M10 15h2M10 21h2M10 27h2"/></svg>
-          <h3>Comunicação corporativa</h3>
+          <h3><a href="/servicos/comunicacao-corporativa.html">Comunicação corporativa</a></h3>
           <p>Comunicação interna e institucional, relatórios e conteúdo de sustentabilidade.</p>
           <a class="falar" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20comunica%C3%A7%C3%A3o%20corporativa%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar sobre isso <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a>
         </li>
@@ -543,15 +576,49 @@ p{margin:0}
     <div class="wrap">
       <h2 id="t-contato">Vamos plantar o próximo projeto.</h2>
       <p class="lead apoio">Conte o que a sua marca precisa. A primeira conversa é para entender o seu desafio e mostrar como podemos ajudar.</p>
+      <form class="form" id="form-contato" novalidate>
+        <div class="campo"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" autocomplete="name" required><span class="erro" id="e-nome"></span></div>
+        <div class="campo"><label for="f-empresa">Empresa</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
+        <div class="campo"><label for="f-servico">O que sua marca precisa</label>
+          <select id="f-servico" name="servico">
+            <option>Ainda não sei, quero conversar</option>
+            <option>Estratégia e posicionamento</option>
+            <option>Branding e identidade visual</option>
+            <option>Publicidade e campanhas</option>
+            <option>Redes sociais e conteúdo</option>
+            <option>Marketing digital</option>
+            <option>Comunicação corporativa</option>
+          </select></div>
+        <div class="campo"><label for="f-invest">Investimento previsto</label>
+          <select id="f-invest" name="investimento">
+            <option>Prefiro conversar antes</option>
+            <option>Até R$ 5 mil</option>
+            <option>De R$ 5 mil a R$ 15 mil</option>
+            <option>De R$ 15 mil a R$ 50 mil</option>
+            <option>Acima de R$ 50 mil</option>
+          </select></div>
+        <div class="campo largo"><label for="f-msg">Conte um pouco do projeto</label><textarea id="f-msg" name="mensagem" rows="3" required></textarea><span class="erro" id="e-msg"></span></div>
+        <div class="envio">
+          <button type="submit" class="botao cheio">Enviar pelo WhatsApp</button>
+          <p>Sua mensagem chega pronta no nosso WhatsApp. É só tocar em enviar.</p>
+        </div>
+      </form>
+      <p class="ou">Prefere falar direto</p>
       <ul class="canais traco">
         <li><a data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><span class="rotulo">WhatsApp</span><span class="valor">+55 11 97975-7763</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a></li>
         <li><a data-canal="email" href="mailto:salvempresa@gmail.com"><span class="rotulo">Email</span><span class="valor">salvempresa@gmail.com</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a></li>
         <li><a data-canal="instagram" href="https://www.instagram.com/salve_cs/" target="_blank" rel="noopener"><span class="rotulo">Instagram</span><span class="valor">@salve_cs</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a></li>
+        <li><a data-canal="linkedin" href="https://www.linkedin.com/company/93306762" target="_blank" rel="noopener"><span class="rotulo">LinkedIn</span><span class="valor">Salve Comunicação Sustentável</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M9 5h10v10"/></svg></a></li>
       </ul>
       <p class="alcance">Atendemos empresas de todo o Brasil, a partir de São Paulo.</p>
     </div>
   </section>
 </main>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Usamos cookies para medir as visitas e melhorar nossos anúncios. Você escolhe. <a href="/politica-de-privacidade.html">Política de Privacidade</a></p>
+  <div class="acoes-c"><button type="button" class="cheio" data-cookies="granted">Aceitar</button><button type="button" data-cookies="denied">Recusar</button></div>
+</div>
 
 <div class="barra-cta" id="barra-cta">
   <a class="botao cheio" data-canal="whatsapp" href="https://api.whatsapp.com/send/?phone=5511979757763&amp;text=Ol%C3%A1%2C%20quero%20conversar%20sobre%20um%20projeto%20com%20a%20Salve.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Conversar no WhatsApp</a>
@@ -564,6 +631,8 @@ p{margin:0}
     <nav aria-label="Documentos">
       <a href="/politica-de-privacidade.html">Política de Privacidade</a>
       <a href="/termos-de-uso.html">Termos de Uso</a>
+      <a href="https://www.instagram.com/salve_cs/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/93306762" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
     <p>© 2026 Salve. Todos os direitos reservados.</p>
   </div>
@@ -725,11 +794,49 @@ p{margin:0}
     if (window.caches) caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }).catch(function(){});
   }
 
+  /* Formulário que monta a mensagem no WhatsApp */
+  var form = document.getElementById('form-contato');
+  if (form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = function(id){ return (document.getElementById(id).value || '').trim(); };
+      var nome = v('f-nome'), msg = v('f-msg'), ok = true;
+      document.getElementById('e-nome').textContent = nome ? '' : 'Escreva seu nome para a gente saber com quem fala.';
+      document.getElementById('e-msg').textContent = msg ? '' : 'Conte em poucas palavras o que você precisa.';
+      if (!nome){ ok = false; document.getElementById('f-nome').focus(); }
+      else if (!msg){ ok = false; document.getElementById('f-msg').focus(); }
+      if (!ok) return;
+      var empresa = v('f-empresa'), servico = v('f-servico'), invest = v('f-invest');
+      var min = function(t){ return t.charAt(0).toLowerCase() + t.slice(1); };
+      var l2 = servico.indexOf('Ainda') === 0 ? 'Ainda não sei qual serviço, quero conversar.' : 'Tenho interesse em ' + min(servico) + '.';
+      var l3 = invest.indexOf('Prefiro') === 0 ? '' : '\nInvestimento previsto ' + min(invest) + '.';
+      var texto = 'Olá, sou ' + nome + (empresa ? ', da ' + empresa : '') + '.\n' + l2 + l3 + '\n\n' + msg;
+      var url = 'https://api.whatsapp.com/send/?phone=5511979757763&text=' + encodeURIComponent(texto) + '&type=phone_number&app_absent=0';
+      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: 'formulario', servico: servico, investimento: invest, local: 'contato' });
+      var w = window.open(url, '_blank'); if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = url; }
+    });
+  }
+
   /* Medição de contato no Google Analytics */
   document.querySelectorAll('[data-canal]').forEach(function(a){
     a.addEventListener('click', function(){
       if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: a.getAttribute('data-canal'), local: (a.closest('[id]') || { id: 'topo' }).id });
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  var aviso = document.getElementById('cookies'); if (!aviso) return;
+  var escolha = null; try { escolha = localStorage.getItem('salve-cookies'); } catch (e) {}
+  if (escolha) return;
+  aviso.hidden = false; document.body.classList.add('com-cookies');
+  aviso.addEventListener('click', function(e){
+    var b = e.target.closest('[data-cookies]'); if (!b) return;
+    var v = b.getAttribute('data-cookies');
+    try { localStorage.setItem('salve-cookies', v); } catch (err) {}
+    if (typeof gtag === 'function') gtag('consent', 'update', { ad_storage: v, ad_user_data: v, ad_personalization: v, analytics_storage: v });
+    aviso.hidden = true; document.body.classList.remove('com-cookies');
   });
 })();
 </script>

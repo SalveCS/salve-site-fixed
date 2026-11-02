@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://salv3.vercel.app/</loc><lastmod>2026-11-01</lastmod><priority>1.0</priority></url>
-  <url><loc>https://salv3.vercel.app/politica-de-privacidade.html</loc><lastmod>2026-11-01</lastmod><priority>0.3</priority></url>
-  <url><loc>https://salv3.vercel.app/termos-de-uso.html</loc><lastmod>2026-11-01</lastmod><priority>0.3</priority></url>
+  <url><loc>https://salv3.vercel.app/</loc><lastmod>2026-11-02</lastmod><priority>1.0</priority></url>
+  <url><loc>https://salv3.vercel.app/politica-de-privacidade.html</loc><lastmod>2026-11-02</lastmod><priority>0.3</priority></url>
+  <url><loc>https://salv3.vercel.app/termos-de-uso.html</loc><lastmod>2026-11-02</lastmod><priority>0.3</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/estrategia-e-posicionamento.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/branding-e-identidade-visual.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/publicidade-e-campanhas.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/redes-sociais-e-conteudo.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/marketing-digital.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://salv3.vercel.app/servicos/comunicacao-corporativa.html</loc><lastmod>2026-11-02</lastmod><priority>0.8</priority></url>
 </urlset>
