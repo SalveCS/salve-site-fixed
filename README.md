@@ -42,4 +42,4 @@ Substitua `https://salv3.vercel.app` pelo novo endereço em `index.html`, nas du
 
 ## Medição
 
-Google Analytics 4, ID `G-BJ72P2VW3S`. Cliques em WhatsApp, email e Instagram geram o evento `generate_lead`, com o canal em `method` e a seção da página em `local`.
+Google Analytics 4, ID `G-R25X4Y44F1`. Cliques em WhatsApp, email e Instagram geram o evento `generate_lead`, com o canal em `method` e a seção da página em `local`.

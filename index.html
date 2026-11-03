@@ -40,9 +40,9 @@
   gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
   try { if (localStorage.getItem('salve-cookies') === 'granted') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' }); } catch (e) {}
   gtag('js', new Date());
-  gtag('config', 'G-BJ72P2VW3S');
+  gtag('config', 'G-R25X4Y44F1');
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ72P2VW3S"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R25X4Y44F1"></script>
 <!--/GA-->
 <script type="application/ld+json">
 {
@@ -861,6 +861,13 @@ body.com-cookies .barra-cta{display:none!important}
     aviso.hidden = true; document.body.classList.remove('com-cookies');
   });
 })();
+</script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a');
+  if (a && a.href.startsWith('mailto:') && typeof gtag === 'function')
+    gtag('event', 'contato_email', { link_url: a.href });
+});
 </script>
 </body>
 </html>
