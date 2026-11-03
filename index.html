@@ -174,7 +174,7 @@ p{margin:0}
 
 /* Fotos, sempre com um fio em volta */
 .foto{position:relative;margin:0;min-width:0}
-.foto img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:var(--fio);outline:1px solid var(--fio);outline-offset:10px}
+.foto img,.foto video{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;background:var(--fio);outline:1px solid var(--fio);outline-offset:10px}
 .foto figcaption{margin-top:24px;font-size:13px;font-style:italic;color:var(--tinta-2)}
 .foto-manifesto{grid-column:1 / span 4;grid-row:2;margin-top:clamp(40px,5vw,64px);align-self:start}
 .manifesto .colunas{grid-row:2}
@@ -183,7 +183,7 @@ p{margin:0}
 .galeria{padding-block:clamp(56px,7vw,96px)}
 .galeria .trio,.galeria .legenda-trio{grid-column:1 / -1}
 .trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;align-items:start}
-.trio .foto img{aspect-ratio:4/5}
+.trio .foto img,.trio .foto video{aspect-ratio:4/5}
 .legenda-trio{margin-top:44px;font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1.2;max-width:26em}
 
 /* História */
@@ -313,7 +313,7 @@ body.com-cookies .barra-cta{display:none!important}
   .foto-manifesto{grid-column:1 / -1;grid-row:auto;max-width:400px;margin-top:40px}
   .trio{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 28px}
   .trio .foto:last-child{grid-column:1 / -1}
-  .trio .foto:last-child img{aspect-ratio:16/10}
+  .trio .foto:last-child img,.trio .foto:last-child video{aspect-ratio:16/10}
 }
 @media (max-width: 640px){
   body{font-size:16px}
@@ -526,14 +526,14 @@ body.com-cookies .barra-cta{display:none!important}
   <section class="secao galeria" aria-label="Pessoas e natureza">
     <div class="wrap">
       <div class="trio">
-        <figure class="foto ">
-          <img src="assets/fotos/mulher-cachoeira.jpg" width="611" height="1600" alt="Pessoa de braços abertos diante de uma cachoeira" loading="lazy" decoding="async">
+        <figure class="foto">
+          <img src="assets/fotos/galeria-corrego.jpg" width="900" height="1588" alt="Córrego entre pedras cobertas de musgo na mata" loading="lazy" decoding="async">
         </figure>
-        <figure class="foto ">
-          <img src="assets/fotos/broto-cidade.jpg" width="894" height="1600" alt="Muda brotando no canteiro de uma avenida" loading="lazy" decoding="async">
+        <figure class="foto">
+          <video src="assets/video/galeria-parque.mp4" poster="assets/fotos/galeria-parque.jpg" width="720" height="900" muted loop playsinline preload="none" aria-label="Lago cercado de mata num parque de São Paulo, com a água em movimento"></video>
         </figure>
-        <figure class="foto ">
-          <img src="assets/fotos/cachoeira.jpg" width="1080" height="1200" alt="Cachoeira entre pedras cobertas de musgo na mata" loading="lazy" decoding="async">
+        <figure class="foto">
+          <img src="assets/fotos/galeria-rio.jpg" width="900" height="1588" alt="Rio atravessando a floresta, visto do alto" loading="lazy" decoding="async">
         </figure>
       </div>
       <p class="legenda-trio">Comunicação feita por pessoas, para pessoas e para o lugar onde todas elas vivem.</p>
@@ -816,6 +816,14 @@ body.com-cookies .barra-cta{display:none!important}
       if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: 'formulario', servico: servico, investimento: invest, local: 'contato' });
       var w = window.open(url, '_blank'); if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = url; }
     });
+  }
+
+  /* Vídeo da galeria, toca só quando aparece na tela e sem movimento para quem pediu menos animação */
+  var vid = document.querySelector('.trio video');
+  if (vid && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    new IntersectionObserver(function(es){ es.forEach(function(e){
+      if (e.isIntersecting){ var p = vid.play(); if (p && p.catch) p.catch(function(){}); } else { vid.pause(); }
+    }); }, { threshold: .25 }).observe(vid);
   }
 
   /* Medição de contato no Google Analytics */
